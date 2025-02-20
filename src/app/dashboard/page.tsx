@@ -10,7 +10,7 @@ import {
   ClockIcon,
 } from "@heroicons/react/24/outline";
 import dayjs from "dayjs";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase/client";
 import { Progress } from "@/components/Progress";
 import { Skeleton } from "@/components/Skeleton";
@@ -130,7 +130,7 @@ export default function DashboardPage() {
           minimumFractionDigits: 2,
           maximumFractionDigits: 2,
         })}`,
-        `${totalIncomeVND.toLocaleString("vi-VN")}`
+        `${totalIncomeVND.toLocaleString("vi-VN")}`,
       ] as [string, string],
     };
   }, [dailyData]);
@@ -210,10 +210,7 @@ export default function DashboardPage() {
                     title="Tổng thu nhập"
                     value={stats.totalIncome}
                     type="income"
-                    description={[
-                      "Dựa trên $7/giờ",
-                      "1 USD = 24,500đ"
-                    ]}
+                    description={["Dựa trên $7/giờ", "1 USD = 24,500đ"]}
                   />
                 </>
               )}

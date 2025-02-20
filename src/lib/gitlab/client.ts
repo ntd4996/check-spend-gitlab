@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink, gql } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { onError } from '@apollo/client/link/error'
-import dayjs from 'dayjs'
+import { GitLabResponse } from "@/types"
 
 interface GitLabTimeLog {
   timeSpent: number
@@ -31,16 +31,6 @@ interface GitLabProject {
   fullPath: string
   issues: {
     nodes: GitLabIssue[]
-    pageInfo: {
-      endCursor: string
-      hasNextPage: boolean
-    }
-  }
-}
-
-interface GitLabResponse {
-  projects: {
-    nodes: GitLabProject[]
     pageInfo: {
       endCursor: string
       hasNextPage: boolean

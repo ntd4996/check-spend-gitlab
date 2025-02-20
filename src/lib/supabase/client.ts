@@ -2,13 +2,14 @@ import { createClient } from '@supabase/supabase-js'
 import type { TimeSpent, TimeSpentByMonth, TimeSpentByYear } from '@/types'
 import { client, CURRENT_USER_QUERY, TIME_SPENT_QUERY, type GitLabResponse } from '@/lib/gitlab/client'
 import dayjs from 'dayjs'
+import { Database } from "@/types/supabase"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 const userEmail = process.env.NEXT_PUBLIC_GITLAB_USER!
 
 // Tắt hoàn toàn tính năng auth
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
   db: {
     schema: 'public'
   },

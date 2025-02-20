@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import * as echarts from 'echarts'
 import dayjs from 'dayjs'
 import 'dayjs/locale/vi'
+import { EChartsOption } from "echarts"
 
 dayjs.locale('vi')
 
@@ -13,7 +14,7 @@ interface Props {
 }
 
 export const DailyChart = ({ data, selectedDate }: Props) => {
-  const options = useMemo(() => {
+  const options: EChartsOption = useMemo(() => {
     // Tạo mảng các ngày trong tháng
     const daysInMonth = selectedDate.daysInMonth()
     const allDays = Array.from({ length: daysInMonth }, (_, i) => {

@@ -4,6 +4,7 @@ import { useMemo } from 'react'
 import * as echarts from 'echarts'
 import dayjs from 'dayjs'
 import 'dayjs/locale/vi'
+import { EChartsOption } from "echarts";
 
 dayjs.locale('vi')
 
@@ -12,7 +13,7 @@ interface Props {
 }
 
 export const MonthlyChart = ({ data }: Props) => {
-  const options = useMemo(() => {
+  const options: EChartsOption = useMemo(() => {
     // Tạo mảng 12 tháng của năm hiện tại
     const currentYear = dayjs().format('YYYY')
     const allMonths = Array.from({ length: 12 }, (_, i) => {

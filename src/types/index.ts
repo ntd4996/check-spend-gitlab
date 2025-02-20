@@ -20,6 +20,45 @@ export interface TimeSpentByYear {
   total_time: number
 }
 
+export interface GitLabResponse {
+  projects: {
+    nodes: {
+      id: string
+      name: string
+      fullPath: string
+      issues: {
+        nodes: {
+          id: string
+          iid: string
+          title: string
+          webUrl: string
+          state: string
+          timeEstimate: number
+          totalTimeSpent: number
+          timelogs: {
+            nodes: {
+              timeSpent: number
+              spentAt: string
+              user: {
+                username: string
+                email: string
+              }
+            }[]
+          }
+        }[]
+        pageInfo: {
+          endCursor: string
+          hasNextPage: boolean
+        }
+      }
+    }[]
+    pageInfo: {
+      endCursor: string
+      hasNextPage: boolean
+    }
+  }
+}
+
 export interface GitlabTimeSpent {
   data: {
     project: {

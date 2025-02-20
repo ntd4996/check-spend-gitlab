@@ -1,13 +1,14 @@
 import ReactECharts from 'echarts-for-react'
 import type { TimeSpentByYear } from '@/types'
 import { useMemo } from 'react'
+import { EChartsOption } from "echarts";
 
 interface Props {
   data: TimeSpentByYear[]
 }
 
 export const YearlyChart = ({ data }: Props) => {
-  const options = useMemo(() => ({
+  const options: EChartsOption = useMemo(() => ({
     title: {
       text: 'Thời gian làm việc theo năm',
       textStyle: {
