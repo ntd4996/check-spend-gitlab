@@ -1,0 +1,15 @@
+Tôi muốn tạo ra 1 project hiển thị số giờ tôi đã spend trong gitlab.demetio.com.
+dùng graphql để lấy dữ liệu.
+chỉ lấy dữ liệu của người dùng là datnt@demetio.com
+xử dụng nextjs tailwindcss typescript
+có trang quản lý và có button get data. get data sẽ lưu về db và vào trang hiển thị chỉ call api lấy dữ liệu trong db ra
+có trang hiển thị số giờ spend theo tháng và có cho chuyển tháng / năm
+có chart hiển thị số giờ spend theo tháng
+có chart hiển thị số giờ spend theo năm
+xử dụng e-chart
+lưu data vào database supabase
+với giao diện nhiều animation và xử dụng giao diện tối màu
+với key là:
+GITLAB_TOKEN=tWahYYWvmdysnMyQJrFx
+GITLAB_URL=https://gitlab.demetio.com 
+
